@@ -6,9 +6,10 @@ class Theater {
   final int columns;
   late List<List<Map<String, String>?>> seats;
 
-  Theater(this.rows, this.columns) {
+  Theater._(this.rows, this.columns) {
     initiaSeats();
   }
+  static final Theater instance = Theater._(5, 5);
 
   void initiaSeats() {
     seats = List.generate(rows, (_) => List.filled(columns, null));
@@ -96,7 +97,7 @@ class Theater {
 }
 
 void main() {
-  Theater theater = Theater(5, 5);
+  Theater theater = Theater._(5, 5);
 
   print('Welcome to Theater Booking System');
 
