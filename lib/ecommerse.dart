@@ -1,8 +1,6 @@
 import 'dart:io';
 // ignore_for_file: avoid_print
 
-
-
 class Product {
   String name;
   double _price;
