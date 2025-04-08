@@ -1,19 +1,19 @@
 import 'dart:io';
 // ignore_for_file: avoid_print
 
+
+
 class Product {
   String name;
-  double _price; // Made private
-  int _quantity; // Made private
+  double _price;
+  int _quantity;
 
   Product(this.name, double price, int quantity)
       : _price = price,
         _quantity = quantity;
 
-  // Getter for price
   double get price => _price;
 
-  // Setter for price
   set price(double value) {
     if (value >= 0) {
       _price = value;
@@ -22,10 +22,8 @@ class Product {
     }
   }
 
-  // Getter for quantity
   int get quantity => _quantity;
 
-  // Setter for quantity
   set quantity(int value) {
     if (value >= 0) {
       _quantity = value;
@@ -299,19 +297,15 @@ class ECommerce {
 }
 
 void main() {
-  // Create an e-commerce system
   var myStore = ECommerce('MyShop');
 
-  // Add some initial categories
   myStore.categories.add(Category('Electronics'));
   myStore.categories.add(Category('Clothing'));
 
-  // Add some initial products
   myStore.categories[0].addProduct('Laptop', 999.99, 10);
   myStore.categories[0].addProduct('Smartphone', 699.99, 15);
   myStore.categories[1].addProduct('T-Shirt', 19.99, 50);
   myStore.categories[1].addProduct('Jeans', 49.99, 30);
 
-  // Start the system
   myStore.run();
 }
